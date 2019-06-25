@@ -109,6 +109,16 @@
                 console.log(e);
             })
         }
+        function signMessage() {
+            var message = {"bb":"cc"};  // 支持字符串和json对象
+            // 请求插件签名
+            mathExtension.requestArbitrarySignature('cosmos1njg8uq4ek9y9fvgw59t8qdtrka8tz0aef5gnk4',message, "title",false).then(signedMessge => {
+                console.log(JSON.stringify(signedMessge));
+                document.getElementById("messageSignatureDiv").innerHTML = JSON.stringify(signedMessge);
+            }).catch(e => {
+                console.log(e);
+            })
+        }
     </script>
 </head>
 
@@ -120,6 +130,8 @@
     <button type="button" class="btn btn-danger btn-lg btn-block" onclick="logout()">Logout</button></br>
     <div id="signatureDiv"></div></br>
     <button type="button" class="btn btn-success btn-lg btn-block" onclick="signTransaction()">Other Transaction</button>
+    <div id="messageSignatureDiv"></div></br>
+    <button type="button" onclick="signMessage()">Sign Message</button>
 </div>
 </body>
 
