@@ -15,7 +15,7 @@
     <script type="text/javascript">
         var network = {
             blockchain: "cosmos",
-            chainId: "cosmoshub-2"
+            chainId: "cosmoshub-3"
         };
 
         function login() {
@@ -42,14 +42,14 @@
             // Transfer
             var transaction = {
                 from: "cosmos1njg8uq4ek9y9fvgw59t8qdtrka8tz0aef5gnk4",
-                chain_id: "cosmoshub-2",
+                chain_id: "cosmoshub-3",
                 account_number: 1756,
                 sequence: 3,
                 fees: {
                     denom: "uatom",
                     amount: 500
                 },
-                gas: 20000,
+                gas: 100000,
                 memo: "",
                 type: "transfer",
                 msg: {
@@ -66,14 +66,14 @@
             /*
             var transaction = {
                 from: "cosmos1njg8uq4ek9y9fvgw59t8qdtrka8tz0aef5gnk4",
-                chain_id: "cosmoshub-2",
+                chain_id: "cosmoshub-3",
                 account_number: 1756,
                 sequence: 3,
                 fees: {
                     denom: "uatom",
                     amount: 500
                 },
-                gas: 20000,
+                gas: 200000,
                 memo: "",
                 type: "delegate",
                 msg: {
