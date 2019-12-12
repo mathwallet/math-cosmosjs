@@ -7,7 +7,7 @@
 // config network
 var network = {
     blockchain: "cosmos",
-    chainId: "cosmoshub-2"
+    chainId: "cosmoshub-3"
 };
 
 // login
