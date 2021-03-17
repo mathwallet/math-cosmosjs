@@ -17,16 +17,16 @@
             blockchain: "cosmos",
             chainId: "cosmoshub-3"
         };
+        var account = null
 
         function login() {
             // identity = {
             //     account: "cosmos1njg8uq4ek9y9fvgw59t8qdtrka8tz0aef5gnk4",
-            //     blockchain: "cosmos",
-            //     chainId: "cosmoshub-2"
+            //     blockchain: "cosmos"
             // }
             mathExtension.getIdentity(network).then(identity => {
                 document.getElementById("loginDiv").innerHTML = JSON.stringify(identity);
-                console.log(identity);
+                account = identity.account;
             }).catch(e => {
                 console.log(e);
             })
@@ -41,8 +41,8 @@
         function signTransaction() {
             // Transfer
             var transaction = {
-                from: "cosmos1njg8uq4ek9y9fvgw59t8qdtrka8tz0aef5gnk4",
-                chain_id: "cosmoshub-3",
+                from: account,
+                chain_id: "cosmoshub-4",
                 account_number: 1756,
                 sequence: 3,
                 fees: {
@@ -112,7 +112,7 @@
         function signMessage() {
             var message = {"bb":"cc"};  // 支持字符串和json对象
             // 请求插件签名
-            mathExtension.requestArbitrarySignature('cosmos1njg8uq4ek9y9fvgw59t8qdtrka8tz0aef5gnk4',message, "title",false).then(signedMessge => {
+            mathExtension.requestArbitrarySignature(account,message, "title",false).then(signedMessge => {
                 console.log(JSON.stringify(signedMessge));
                 document.getElementById("messageSignatureDiv").innerHTML = JSON.stringify(signedMessge);
             }).catch(e => {
