@@ -14,8 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script type="text/javascript">
         var network = {
-            blockchain: "cosmos",
-            chainId: "cosmoshub-3"
+            blockchain: "cosmos"
         };
         var account = null
 
@@ -102,9 +101,9 @@
             // https://github.com/irisnet/irisnet-crypto/blob/develop/chains/cosmos/stake.js
             */
             // 请求插件签名
-            mathExtension.requestSignature(transaction, network).then(signedTransaction => {
-                console.log(signedTransaction);
-                document.getElementById("signatureDiv").innerHTML = JSON.stringify(signedTransaction);
+            mathExtension.requestSignature(transaction, network).then(signature => {
+                console.log(signature);
+                document.getElementById("signatureDiv").innerHTML = JSON.stringify(signature);
             }).catch(e => {
                 console.log(e);
             })
