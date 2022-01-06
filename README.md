@@ -4,11 +4,6 @@
 
 
 ```
-// config network
-var network = {
-    blockchain: "cosmos"
-};
-
 // login
 if (!window.offlineSigner) {
     throw new Error("Please install MathWallet first!")
